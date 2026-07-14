@@ -15,7 +15,7 @@
 |---|---|---|
 | [Retail Sales Analytics Dashboard](https://github.com/upmanNimisha/Retail-Sales-Analytics) | Java, MySQL, SQL, Power BI, Excel | Analyzed 100,000+ retail records end-to-end (JDBC ETL → MySQL) with a Power BI dashboard covering revenue, profit, category & city-wise sales |
 | [Customer Churn Prediction](https://github.com/upmanNimisha/Customer-Churn_Prediction) | Python, SQL, Power BI | Identified key churn drivers through EDA & SQL analysis; dashboards tracking churn rate, high-risk customers & retention opportunities |
-| Blinkit Sales Analysis | Power BI, SQL, Excel | Outlet & product performance analysis with KPI cards, slicers and drill-down reports to surface growth opportunities |
+| [Blinkit Sales Analysis](https://github.com/upmanNimisha/Blinkit-Sales-Analysis) | Power BI, SQL, Excel | Outlet & product performance analysis with KPI cards, slicers and drill-down reports to surface growth opportunities |
 | [Data Analyst Journey](https://github.com/upmanNimisha/data-analyst-journey) | SQL, Power BI, Python | 🔄 Ongoing log of projects & learning on the path to a Data Analyst career |
 
 </div>
