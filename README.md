@@ -108,6 +108,6 @@
 ---
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/Nimisha/">LinkedIn</a> ·
+  <a href="https://www.linkedin.com/in/nimisha-a89835237/">LinkedIn</a> ·
   <a href="mailto:upman.mat@gmail.com">Email</a>
 </p>
