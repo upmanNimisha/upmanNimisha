@@ -94,7 +94,7 @@
   </a>
 </p>
 
-<p align="right">
+<p align="left">
   Solving SQL challenges daily to strengthen Data Analytics & Business Intelligence skills 
 </p>
 
