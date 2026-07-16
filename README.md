@@ -93,8 +93,9 @@
     <img src="https://img.shields.io/badge/HackerRank-upman__mat-brightgreen?logo=hackerrank" />
   </a>
 </p>
----
 
+
+---
 ### 🎓 Education
 **B.Tech in Electronics Engineering** — Harcourt Butler Technical University, Kanpur *(2020 – 2024)*
 
