@@ -94,9 +94,10 @@
   </a>
 </p>
 
-<p align="center">
-  Solving SQL challenges daily to strengthen Data Analytics & Business Intelligence skills 🚀
+<p align="right">
+  Solving SQL challenges daily to strengthen Data Analytics & Business Intelligence skills 
 </p>
+
 
 
 ---
