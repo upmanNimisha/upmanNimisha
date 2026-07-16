@@ -90,8 +90,12 @@
 
 <p align="center">
   <a href="https://www.hackerrank.com/profile/upman_mat">
-    <img src="https://img.shields.io/badge/HackerRank-upman__mat-brightgreen?logo=hackerrank" />
+    <img src="https://img.shields.io/badge/HackerRank-SQL%20Journey-2EC866?style=for-the-badge&logo=hackerrank&logoColor=white" alt="HackerRank Profile"/>
   </a>
+</p>
+
+<p align="center">
+  Solving SQL challenges daily to strengthen Data Analytics & Business Intelligence skills 🚀
 </p>
 
 
