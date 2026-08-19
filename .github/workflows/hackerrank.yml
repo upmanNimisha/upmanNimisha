@@ -3,6 +3,9 @@ name: Update HackerRank
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: "0 18 * * *"
+
 jobs:
   update-hackerrank:
     runs-on: ubuntu-24.04
