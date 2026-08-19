@@ -89,7 +89,7 @@
 ### 🧠 Coding Profiles
 
 
-<div align="center">
+<div align="left">
 
 <a href="https://www.hackerrank.com/profile/upman_mat">
   <img src="./assets/hackerrank.svg" width="500">
