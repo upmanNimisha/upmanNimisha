@@ -88,15 +88,14 @@
 ---
 ### 🧠 Coding Profiles
 
-<p align="left">
-  <a href="https://www.hackerrank.com/profile/upman_mat">
-    <img src="https://img.shields.io/badge/HackerRank-SQL%20Journey-2EC866?style=for-the-badge&logo=hackerrank&logoColor=white" alt="HackerRank Profile"/>
-  </a>
-</p>
 
-<p align="left">
-  Solving SQL challenges daily to strengthen Data Analytics & Business Intelligence skills 
-</p>
+<div align="center">
+
+<a href="https://www.hackerrank.com/profile/upman_mat">
+  <img src="./assets/hackerrank.svg" width="500">
+</a>
+
+</div>
 
 
 
