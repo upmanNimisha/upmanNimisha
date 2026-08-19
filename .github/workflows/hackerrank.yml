@@ -13,7 +13,7 @@ jobs:
 
       - name: Run HackerRank test
         run: |
-          python scripts/test_hackerrank.py
+          python scripts/update_hackerrank.py
 
       - name: Upload HackerRank page
         uses: actions/upload-artifact@v4
