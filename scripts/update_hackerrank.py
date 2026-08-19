@@ -15,45 +15,42 @@ html = response.text
 soup = BeautifulSoup(html, "html.parser")
 
 print("Status:", response.status_code)
-print("Page length:", len(html))
-
-print("\n" + "=" * 70)
-print("BADGE HTML")
-print("=" * 70)
 
 badges = soup.select(".hacker-badge")
 
-print("Number of badges:", len(badges))
+print("\n" + "=" * 60)
+print("DYNAMIC HACKERRANK DATA")
+print("=" * 60)
 
-for i, badge in enumerate(badges, 1):
+for badge in badges:
 
-    print("\n" + "-" * 70)
-    print(f"BADGE {i}")
-    print("-" * 70)
+    badge_box = badge.select_one(".ui-badge")
 
-    print(badge.prettify()[:5000])
+    if not badge_box:
+        continue
 
+    # Badge name
+    title = badge.select_one(".badge-title")
 
-print("\n" + "=" * 70)
-print("SQL RELATED IMAGES")
-print("=" * 70)
+    if title:
+        name = title.get_text(strip=True)
+    else:
+        name = "Unknown"
 
-images = soup.find_all("img")
+    # Level
+    classes = badge_box.get("class", [])
 
-for img in images:
+    level = "Unknown"
 
-    src = img.get("src", "")
-    alt = img.get("alt", "")
+    for cls in classes:
+        if cls.startswith("level-"):
+            level = cls.replace("level-", "").capitalize()
 
-    if "sql" in str(src).lower() or "sql" in str(alt).lower():
+    # Number of stars
+    stars = len(badge.select(".badge-star"))
 
-        print("\nSRC:", src)
-        print("ALT:", alt)
-        print("CLASS:", img.get("class"))
-        print("TITLE:", img.get("title"))
+    print(f"\n{name}")
+    print(f"Level : {level}")
+    print(f"Stars : {stars}")
 
-
-with open("hackerrank_page.html", "w", encoding="utf-8") as f:
-    f.write(html)
-
-print("\nHTML saved successfully.")
+print("\n" + "=" * 60)
