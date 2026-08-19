@@ -11,60 +11,47 @@ response = requests.get(
     timeout=30
 )
 
-print("Status:", response.status_code)
-print("Page length:", len(response.text))
-
 html = response.text
-
 soup = BeautifulSoup(html, "html.parser")
 
-print("\n" + "=" * 60)
-print("HACKERRANK PROFILE DATA")
-print("=" * 60)
+print("Status:", response.status_code)
+print("Page length:", len(html))
 
-# --------------------------------------------------
-# Find Badges section
-# --------------------------------------------------
-
-badges_section = soup.select_one(".hacker-badges")
-
-if badges_section:
-    print("\n✅ Badges section found!")
-
-    print("\nVisible badge text:")
-    print("-" * 60)
-
-    text = badges_section.get_text(" ", strip=True)
-
-    print(text[:5000])
-
-else:
-    print("\n❌ Badges section not found")
-
-
-# --------------------------------------------------
-# Find individual badges
-# --------------------------------------------------
-
-print("\n" + "=" * 60)
-print("INDIVIDUAL BADGES")
-print("=" * 60)
+print("\n" + "=" * 70)
+print("BADGE HTML")
+print("=" * 70)
 
 badges = soup.select(".hacker-badge")
 
-print("Number of badge elements:", len(badges))
+print("Number of badges:", len(badges))
 
 for i, badge in enumerate(badges, 1):
 
-    text = badge.get_text(" ", strip=True)
+    print("\n" + "-" * 70)
+    print(f"BADGE {i}")
+    print("-" * 70)
 
-    print(f"\nBadge {i}:")
-    print(text)
+    print(badge.prettify()[:5000])
 
 
-# --------------------------------------------------
-# Save HTML
-# --------------------------------------------------
+print("\n" + "=" * 70)
+print("SQL RELATED IMAGES")
+print("=" * 70)
+
+images = soup.find_all("img")
+
+for img in images:
+
+    src = img.get("src", "")
+    alt = img.get("alt", "")
+
+    if "sql" in str(src).lower() or "sql" in str(alt).lower():
+
+        print("\nSRC:", src)
+        print("ALT:", alt)
+        print("CLASS:", img.get("class"))
+        print("TITLE:", img.get("title"))
+
 
 with open("hackerrank_page.html", "w", encoding="utf-8") as f:
     f.write(html)
