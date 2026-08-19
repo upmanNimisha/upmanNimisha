@@ -5,11 +5,15 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4
 
       - name: Run HackerRank test
         run: |
