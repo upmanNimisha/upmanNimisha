@@ -1,1 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+width="700"
+height="300"
+viewBox="0 0 700 300">
 
+<rect width="100%" height="100%" rx="20"
+      fill="#0d1117"
+      stroke="#30363d"
+      stroke-width="2"/>
+
+<!-- Header -->
+
+<text x="40" y="50"
+      font-family="Arial, sans-serif"
+      font-size="28"
+      font-weight="bold"
+      fill="#ffffff">
+    HackerRank Journey
+</text>
+
+    <!-- Badge 1 -->
+
+    <text x="40" y="120"
+          font-family="Arial, sans-serif"
+          font-size="20"
+          font-weight="bold"
+          fill="#ffffff">
+        Days of Code
+    </text>
+
+    <text x="250" y="120"
+          font-family="Arial, sans-serif"
+          font-size="22"
+          fill="#f0c419">
+        ★
+    </text>
+
+    <text x="250" y="148"
+          font-family="Arial, sans-serif"
+          font-size="15"
+          fill="#8b949e">
+        Bronze
+    </text>
+    
+    <!-- Badge 2 -->
+
+    <text x="40" y="210"
+          font-family="Arial, sans-serif"
+          font-size="20"
+          font-weight="bold"
+          fill="#ffffff">
+        SQL
+    </text>
+
+    <text x="250" y="210"
+          font-family="Arial, sans-serif"
+          font-size="22"
+          fill="#f0c419">
+        ★★★
+    </text>
+
+    <text x="250" y="238"
+          font-family="Arial, sans-serif"
+          font-size="15"
+          fill="#8b949e">
+        Silver
+    </text>
+    
+</svg>
