@@ -1,1 +1,23 @@
 
+name: Test HackerRank
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run HackerRank test
+        run: |
+          python scripts/test_hackerrank.py
+
+      - name: Upload HackerRank page
+        uses: actions/upload-artifact@v4
+        with:
+          name: hackerrank-page
+          path: hackerrank_page.html
