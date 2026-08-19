@@ -11,42 +11,41 @@ response = requests.get(
     timeout=30
 )
 
-print("=" * 50)
-print("HACKERRANK TEST")
-print("=" * 50)
-
-print("Status Code:", response.status_code)
-print("Page Length:", len(response.text))
-
 html = response.text
 
-# Check whether important words/data exist in the downloaded page
+print("Status:", response.status_code)
+print("Length:", len(html))
+
+# Find useful sections around words related to profile stats
 keywords = [
-    "star",
+    "starRating",
+    "star_rating",
     "stars",
     "badge",
     "badges",
-    "SQL",
-    "profile",
-    "rating",
+    "solved",
+    "problemSolved",
+    "challengesSolved",
     "score",
-    "challenge"
+    "rating"
 ]
 
-print("\nKeyword Check:")
-print("-" * 50)
-
 for keyword in keywords:
-    count = len(re.findall(keyword, html, re.IGNORECASE))
-    print(f"{keyword}: {count}")
+    print("\n" + "=" * 70)
+    print("SEARCHING:", keyword)
+    print("=" * 70)
 
-print("\nFirst 1000 characters of page:")
-print("-" * 50)
-print(html[:1000])
+    matches = list(re.finditer(keyword, html, re.IGNORECASE))
 
-# Save the complete page
+    print("Matches:", len(matches))
+
+    # Show first 3 useful contexts
+    for match in matches[:3]:
+        start = max(0, match.start() - 300)
+        end = min(len(html), match.end() + 500)
+
+        print("\n--- MATCH ---")
+        print(html[start:end])
+
 with open("hackerrank_page.html", "w", encoding="utf-8") as f:
     f.write(html)
-
-print("\nHTML file created successfully.")
-print("=" * 50)
