@@ -1,5 +1,5 @@
 import requests
-import re
+from bs4 import BeautifulSoup
 
 url = "https://www.hackerrank.com/profile/upman_mat"
 
@@ -11,41 +11,62 @@ response = requests.get(
     timeout=30
 )
 
+print("Status:", response.status_code)
+print("Page length:", len(response.text))
+
 html = response.text
 
-print("Status:", response.status_code)
-print("Length:", len(html))
+soup = BeautifulSoup(html, "html.parser")
 
-# Find useful sections around words related to profile stats
-keywords = [
-    "starRating",
-    "star_rating",
-    "stars",
-    "badge",
-    "badges",
-    "solved",
-    "problemSolved",
-    "challengesSolved",
-    "score",
-    "rating"
-]
+print("\n" + "=" * 60)
+print("HACKERRANK PROFILE DATA")
+print("=" * 60)
 
-for keyword in keywords:
-    print("\n" + "=" * 70)
-    print("SEARCHING:", keyword)
-    print("=" * 70)
+# --------------------------------------------------
+# Find Badges section
+# --------------------------------------------------
 
-    matches = list(re.finditer(keyword, html, re.IGNORECASE))
+badges_section = soup.select_one(".hacker-badges")
 
-    print("Matches:", len(matches))
+if badges_section:
+    print("\n✅ Badges section found!")
 
-    # Show first 3 useful contexts
-    for match in matches[:3]:
-        start = max(0, match.start() - 300)
-        end = min(len(html), match.end() + 500)
+    print("\nVisible badge text:")
+    print("-" * 60)
 
-        print("\n--- MATCH ---")
-        print(html[start:end])
+    text = badges_section.get_text(" ", strip=True)
+
+    print(text[:5000])
+
+else:
+    print("\n❌ Badges section not found")
+
+
+# --------------------------------------------------
+# Find individual badges
+# --------------------------------------------------
+
+print("\n" + "=" * 60)
+print("INDIVIDUAL BADGES")
+print("=" * 60)
+
+badges = soup.select(".hacker-badge")
+
+print("Number of badge elements:", len(badges))
+
+for i, badge in enumerate(badges, 1):
+
+    text = badge.get_text(" ", strip=True)
+
+    print(f"\nBadge {i}:")
+    print(text)
+
+
+# --------------------------------------------------
+# Save HTML
+# --------------------------------------------------
 
 with open("hackerrank_page.html", "w", encoding="utf-8") as f:
     f.write(html)
+
+print("\nHTML saved successfully.")
